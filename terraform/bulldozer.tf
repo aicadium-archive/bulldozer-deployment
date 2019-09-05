@@ -15,7 +15,7 @@ data "vault_generic_secret" "bulldozer" {
 }
 
 locals {
-  rendered_values = templatefile("${path.module}/templates/bulldozer.template.yaml", local.values)
+  rendered_values = templatefile("${path.module}/templates/values.template.yaml", local.values)
 
   values = {
     github_integration_id = "${data.vault_generic_secret.bulldozer.data["github_app_integration_id"]}"
