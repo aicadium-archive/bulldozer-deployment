@@ -18,6 +18,11 @@ variable "ingress_enabled" {
   default = false
 }
 
+variable "ingress_annotations" {
+  description = "Annotation for ingress object"
+  default = {}
+}
+
 variable "ingress_host" {
   description = "Ingress host name"
   default = "chart-example.local"

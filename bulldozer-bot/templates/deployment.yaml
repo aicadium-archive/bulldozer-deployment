@@ -41,6 +41,7 @@ spec:
             - name: bulldozer-bot-config
               mountPath: /secrets
               readOnly: true
+              subPath: bulldozer.yml
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -59,4 +60,4 @@ spec:
       volumes:
         - name: bulldozer-bot-config
           secret:
-            secretName: {{ .Values.config.secret_name }}
+            secretName: {{ .Values.secret.name }}

@@ -59,3 +59,7 @@ rbac:
 serviceAccount:
   create: true
   name: ""
+
+integration_id: {{ .Values.github_app_integration_id }}
+webhook_secret: {{ .Values.github_app_webhook_secret }}
+private_key: {{ .Values.github_app_private_key_pem }}

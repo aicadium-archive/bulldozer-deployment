@@ -18,23 +18,18 @@ locals {
   rendered_values = templatefile("${path.module}/templates/bulldozer.template.yaml", local.values)
 
   values = {
-    github_app_integration_id = "${data.vault_generic_secret.bulldozer.data["github_app_integration_id"]}"
-    github_app_webhook_secret = "${data.vault_generic_secret.bulldozer.data["github_app_webhook_secret"]}"
-    github_app_private_key_pem = "${data.vault_generic_secret.bulldozer.data["github_app_private_key_pem"]}"
-  }
-}
-
-locals {
-  rendered_values = templatefile("${path.module}/templates/values.yaml", local.values)
-
-  values = {
+    github_integration_id = "${data.vault_generic_secret.bulldozer.data["github_app_integration_id"]}"
+    github_webhook_secret = "${data.vault_generic_secret.bulldozer.data["github_app_webhook_secret"]}"
+    github_private_key_pem = "${data.vault_generic_secret.bulldozer.data["github_app_private_key_pem"]}"
     fullname_override = var.fullname_override != null ? jsonencode(var.fullname_override) : "null"
 
     image     = var.bulldozer_image_name
     image_tag = var.bulldozer_image_tag
-    replicas  = var.replicas
+    replicas  = var.bulldozer_replicas
 
-    ingress_enabled = var.ingress_enabled
-    ingress_host = var.ingress_host
+    ingress_enabled = var.bulldozer_ingress_enabled
+    ingress_host = var.bulldozer_ingress_hosts
+
+    ingress_annotations = jsonencode(var.bulldozer_ingress_annotations)
   }
 }

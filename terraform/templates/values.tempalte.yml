@@ -23,7 +23,7 @@ service:
 
 ingress:
   enabled: ${ingress_enabled}
-  annotations: {}
+  annotations: ${ingress_annotations}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -59,3 +59,7 @@ rbac:
 serviceAccount:
   create: true
   name: ""
+
+integration_id: ${github_integration_id}
+webhook_secret: ${github_webhook_secret}
+private_key: ${github_private_key}
