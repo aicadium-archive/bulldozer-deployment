@@ -8,6 +8,23 @@ variable "bulldozer_image_tag" {
   default = "1.7.0"
 }
 
+variable "bulldozer_release_name" {
+  description = "Release name"
+  default = "bulldozer"
+}
+
+variable "bulldozer_chart_name" {
+  description = "Name of the chart to use"
+}
+
+variable "bulldozer_chart_version" {
+  description = "Version of the chart"
+}
+
+variable "bulldozer_chart_repository" {
+  description = "Repository holding the chart"
+}
+
 variable "replicas" {
   description = "Replica count for the bot"
   default = 1
@@ -25,5 +42,4 @@ variable "ingress_annotations" {
 
 variable "ingress_host" {
   description = "Ingress host name"
-  default = "chart-example.local"
 }
