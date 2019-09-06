@@ -57,5 +57,11 @@ variable "bulldozer_github_private_key_pem" {
 }
 
 variable "fullname_override" {
+  description = "Fullname for Bulldozer deployment"
+  default = null
+}
+
+variable "name_override" {
   description = "Name for Bulldozer deployment"
+  default = null
 }
