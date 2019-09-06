@@ -43,3 +43,15 @@ variable "bulldozer_ingress_annotations" {
 variable "bulldozer_ingress_host" {
   description = "Ingress host name"
 }
+
+variable "github_integration_id"{
+  description = "Github app id for Bulldozer app"
+}
+
+variable "github_webhook_secret" {
+  description = "Github webhook secret for Bulldozer app"
+}
+
+variable "github_private_key_pem" {
+  description = "Github private key for Bulldozer app"
+}
