@@ -55,3 +55,7 @@ variable "bulldozer_github_webhook_secret" {
 variable "bulldozer_github_private_key_pem" {
   description = "Github private key for Bulldozer app"
 }
+
+variable "fullname_override" {
+  description = "Name for Bulldozer deployment"
+}

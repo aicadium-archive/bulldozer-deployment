@@ -16,10 +16,11 @@ locals {
     github_integration_id = var.bulldozer_github_integration_id
     github_webhook_secret = var.bulldozer_github_webhook_secret
     github_private_key_pem = var.bulldozer_github_private_key_pem
+    fullname_override = var.fullname_override != null ? jsonencode(var.fullname_override) : "null"
 
     image     = var.bulldozer_image_name
     image_tag = var.bulldozer_image_tag
-    replicas  = var.replicas
+    replicas  = var.bulldozer_replicas
 
     ingress_enabled = var.bulldozer_ingress_enabled
     ingress_host = var.bulldozer_ingress_host
