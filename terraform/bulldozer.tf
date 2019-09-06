@@ -3,7 +3,6 @@ resource "helm_release" "bulldozer" {
   chart      = var.chart_name
   repository = var.chart_repository
   version    = var.chart_version
-  namespace  = var.chart_namespace
 
   values = [
     local.rendered_values
