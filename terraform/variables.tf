@@ -30,16 +30,16 @@ variable "replicas" {
   default = 1
 }
 
-variable "ingress_enabled" {
+variable "bulldozer_ingress_enabled" {
   description = "Whether ingress is enabled"
   default = false
 }
 
-variable "ingress_annotations" {
+variable "bulldozer_ingress_annotations" {
   description = "Annotation for ingress object"
   default = {}
 }
 
-variable "ingress_host" {
+variable "bulldozer_ingress_host" {
   description = "Ingress host name"
 }

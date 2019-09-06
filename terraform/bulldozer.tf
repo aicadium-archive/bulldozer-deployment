@@ -28,7 +28,7 @@ locals {
     replicas  = var.bulldozer_replicas
 
     ingress_enabled = var.bulldozer_ingress_enabled
-    ingress_host = var.bulldozer_ingress_hosts
+    ingress_host = var.bulldozer_ingress_host
 
     ingress_annotations = jsonencode(var.bulldozer_ingress_annotations)
   }
