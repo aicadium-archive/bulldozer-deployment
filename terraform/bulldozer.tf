@@ -13,14 +13,13 @@ locals {
   rendered_values = templatefile("${path.module}/templates/values.template.yaml", local.values)
 
   values = {
-    github_integration_id = var.github_integration_id
-    github_webhook_secret = var.github_webhook_secret
-    github_private_key_pem = var.github_private_key_pem
-    fullname_override = var.fullname_override != null ? jsonencode(var.fullname_override) : "null"
+    github_integration_id = var.bulldozer_github_integration_id
+    github_webhook_secret = var.bulldozer_github_webhook_secret
+    github_private_key_pem = var.bulldozer_github_private_key_pem
 
     image     = var.bulldozer_image_name
     image_tag = var.bulldozer_image_tag
-    replicas  = var.bulldozer_replicas
+    replicas  = var.replicas
 
     ingress_enabled = var.bulldozer_ingress_enabled
     ingress_host = var.bulldozer_ingress_host
