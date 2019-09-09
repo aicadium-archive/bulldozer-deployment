@@ -4,6 +4,10 @@ metadata:
   name: {{ include "bulldozer-bot.fullname" . }}
   labels:
 {{ include "bulldozer-bot.labels" . | indent 4 }}
+  {{- with .Values.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
