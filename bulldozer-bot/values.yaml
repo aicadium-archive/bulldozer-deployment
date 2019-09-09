@@ -17,7 +17,7 @@ config:
   secret_name: ""
 
 service:
-  enabled: false
+  enabled: true
   type: ClusterIP
   port: 80
 
@@ -34,6 +34,9 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+secret:
+  name: bulldozer-secret
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -54,8 +57,8 @@ tolerations: []
 affinity: {}
 
 rbac:
-  create: true
+  create: false
 
 serviceAccount:
-  create: true
+  create: false
   name: ""

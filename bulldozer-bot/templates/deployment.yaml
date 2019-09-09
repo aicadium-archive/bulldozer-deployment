@@ -59,4 +59,4 @@ spec:
       volumes:
         - name: bulldozer-bot-config
           secret:
-            secretName: {{ .Values.config.secret_name }}
+            secretName: {{ .Values.secret.name }}

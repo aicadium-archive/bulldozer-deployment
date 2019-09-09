@@ -17,24 +17,22 @@ config:
   secret_name: ""
 
 service:
-  enabled: false
+  enabled: true
   type: ClusterIP
   port: 80
 
 ingress:
   enabled: ${ingress_enabled}
-  annotations: {}
+  annotations: ${ingress_annotations}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: ${ingress_host}
-      paths: []
 
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -54,8 +52,12 @@ tolerations: []
 affinity: {}
 
 rbac:
-  create: true
+  create: false
 
 serviceAccount:
-  create: true
+  create: false
   name: ""
+
+github_app_integration_id: ${github_integration_id}
+github_app_webhook_secret: ${github_webhook_secret}
+github_app_private_key_pem: ${github_private_key_pem}
