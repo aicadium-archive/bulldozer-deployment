@@ -1,16 +1,16 @@
 variable "bulldozer_image_name" {
   description = "Image name for the bot image"
-  default = "palantirtechnologies/bulldozer"
+  default     = "palantirtechnologies/bulldozer"
 }
 
 variable "bulldozer_image_tag" {
   description = "Image tag for the bot image"
-  default = "1.7.0"
+  default     = "1.7.0"
 }
 
 variable "bulldozer_release_name" {
   description = "Release name"
-  default = "bulldozer"
+  default     = "bulldozer"
 }
 
 variable "bulldozer_chart_name" {
@@ -27,24 +27,24 @@ variable "bulldozer_chart_repository" {
 
 variable "replicas" {
   description = "Replica count for the bot"
-  default = 1
+  default     = 1
 }
 
 variable "bulldozer_ingress_enabled" {
   description = "Whether ingress is enabled"
-  default = false
+  default     = false
 }
 
 variable "bulldozer_ingress_annotations" {
   description = "Annotation for ingress object"
-  default = {}
+  default     = {}
 }
 
 variable "bulldozer_ingress_host" {
   description = "Ingress host name"
 }
 
-variable "bulldozer_github_integration_id"{
+variable "bulldozer_github_integration_id" {
   description = "Github app id for Bulldozer app"
 }
 
@@ -58,10 +58,10 @@ variable "bulldozer_github_private_key_pem" {
 
 variable "fullname_override" {
   description = "Fullname for Bulldozer deployment"
-  default = null
+  default     = null
 }
 
 variable "name_override" {
   description = "Name for Bulldozer deployment"
-  default = null
+  default     = null
 }

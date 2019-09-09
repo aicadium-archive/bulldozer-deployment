@@ -13,12 +13,12 @@ locals {
   rendered_values = templatefile("${path.module}/templates/values.template.yml", local.values)
 
   values = {
-    github_integration_id = var.bulldozer_github_integration_id
-    github_webhook_secret = var.bulldozer_github_webhook_secret
+    github_integration_id  = var.bulldozer_github_integration_id
+    github_webhook_secret  = var.bulldozer_github_webhook_secret
     github_private_key_pem = jsonencode(var.bulldozer_github_private_key_pem)
-    bulldozer_image_name = var.bulldozer_image_name
-    bulldozer_image_tag = var.bulldozer_image_tag
-    name_override = var.name_override != null ? jsonencode(var.name_override) : "null"
+    bulldozer_image_name   = var.bulldozer_image_name
+    bulldozer_image_tag    = var.bulldozer_image_tag
+    name_override          = var.name_override != null ? jsonencode(var.name_override) : "null"
 
     fullname_override = var.fullname_override != null ? jsonencode(var.fullname_override) : "null"
 
@@ -27,7 +27,7 @@ locals {
     replicas  = var.replicas
 
     ingress_enabled = var.bulldozer_ingress_enabled
-    ingress_host = var.bulldozer_ingress_host
+    ingress_host    = var.bulldozer_ingress_host
 
     ingress_annotations = jsonencode(var.bulldozer_ingress_annotations)
   }
