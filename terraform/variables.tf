@@ -15,14 +15,17 @@ variable "bulldozer_release_name" {
 
 variable "bulldozer_chart_name" {
   description = "Name of the chart to use"
+  default     = "bulldozer-bot"
 }
 
 variable "bulldozer_chart_version" {
   description = "Version of the chart"
+  default     = "0.1.11"
 }
 
 variable "bulldozer_chart_repository" {
   description = "Repository holding the chart"
+  default     = "amoy"
 }
 
 variable "replicas" {
